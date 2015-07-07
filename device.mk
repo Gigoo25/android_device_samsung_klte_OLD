@@ -97,11 +97,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # NFC
-#PRODUCT_PACKAGES += \
-#    com.android.nfc_extras \
-#    NfcNci \
-#    Tag \
-#    nfc_nci.pn54x.default
+PRODUCT_PACKAGES += \
+    NfcNci \
+    nfc_nci.pn54x.default \
+    Tag
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -111,15 +116,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.sec.boot.sh \
     ueventd.qcom.rc
-
-# NFC
-#PRODUCT_PACKAGES += \
-#    nfc_nci.pn54x.default
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-#    $(LOCAL_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-#    $(LOCAL_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Thermal
 PRODUCT_COPY_FILES += \
