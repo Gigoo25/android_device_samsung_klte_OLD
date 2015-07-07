@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common msm8974
--include device/samsung/msm8974-common/BoardConfigCommon.mk
-
 TARGET_OTA_ASSERT_DEVICE := kltexx,kltelra,kltetmo,kltecan,klteatt,klteub,klteacg,klte
 
 LOCAL_PATH := device/samsung/klte
@@ -178,3 +175,10 @@ TW_NO_EXFAT_FUSE := false
 TW_NO_EXFAT := false
 TW_NO_SCREEN_TIMEOUT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+
+# inherit from the proprietary version
+-include vendor/samsung/klte/BoardConfigVendor.mk
+-include vendor/samsung/klte-common/BoardConfigVendor.mk
+
+# inherit from common msm8974
+-include device/samsung/msm8974-common/BoardConfigCommon.mk
